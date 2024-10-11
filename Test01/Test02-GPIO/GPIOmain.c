@@ -16,31 +16,16 @@
 #define SW3	 PORTD1
 #define LED1 PORTG1 
 
-volatile int ival = 1000;
-ISR(INT0_vect)	// 점점 느리게
+volatile int ival = 500;
+ISR(INT0_vect)	// 점점 느리게 : ival 증가
 {	
-	
+	ival += 100;
 }
 
-ISR(INT1_vect)	// 점점 빠르게
+ISR(INT1_vect)	// 점점 빠르게 : ival 감소
 {
-	
-}
-
-void StandBy()	// PG4 pin으로 프로그램 시작 스위치 연결
-{
-	DDRG &= ~0x10;	// PG4 : 입력으로 설정
-	PORTG |= 0x10;	// PG4 : Pull-Up
-
-	while((PING & 0x10) == 0);	// PINg0의 초기값이 1(open)임을 가정,	무한 loop until Pin == 1	
-	//while(1) // 
-	//{		
-		//if((PING & 0x10) == 1) break;
-	//}		
-	while(1)
-	{	
-		if((PING & 0x10) == 0) break;
-	}	
+	ival -= 100;
+	if(ival < 0) ival = 100;
 }
 
 int main(void)
@@ -54,8 +39,9 @@ int main(void)
 	PORTG &= ~_BV(LED1);		
 	
 	// Mask Register : EIMSK
-	
+	EIMSK |= 0x03;// 0b 0000 0011 : 0x03
 	// Create register	: EICRA
+	EICRA = (EICRA & 0xF0) | 0x0A;  // 0b 0000 1111 : 0x0F,   0b xxxx 1010
 	
 	sei();
     while (1) 

@@ -7,6 +7,8 @@ Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Test01", "Test01\Test01.cpr
 EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Test02-GPIO", "Test02-GPIO\Test02-GPIO.cproj", "{B9019AA8-25E2-406A-AEA5-5D76D8BEAD98}"
 EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Test03-Timer", "Test03-Timer\Test03-Timer.cproj", "{43FC2C85-4F8E-4333-9D9F-8985D77D399D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -21,6 +23,10 @@ Global
 		{B9019AA8-25E2-406A-AEA5-5D76D8BEAD98}.Debug|AVR.Build.0 = Debug|AVR
 		{B9019AA8-25E2-406A-AEA5-5D76D8BEAD98}.Release|AVR.ActiveCfg = Release|AVR
 		{B9019AA8-25E2-406A-AEA5-5D76D8BEAD98}.Release|AVR.Build.0 = Release|AVR
+		{43FC2C85-4F8E-4333-9D9F-8985D77D399D}.Debug|AVR.ActiveCfg = Debug|AVR
+		{43FC2C85-4F8E-4333-9D9F-8985D77D399D}.Debug|AVR.Build.0 = Debug|AVR
+		{43FC2C85-4F8E-4333-9D9F-8985D77D399D}.Release|AVR.ActiveCfg = Release|AVR
+		{43FC2C85-4F8E-4333-9D9F-8985D77D399D}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
